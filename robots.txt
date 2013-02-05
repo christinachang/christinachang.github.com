@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://christinachang.github.com/sitemap.xml 

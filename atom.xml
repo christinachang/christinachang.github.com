@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://christinachang.github.com/atom.xml" rel="self"/>
+  <link href="http://christinachang.github.com/"/>
+  <updated>2013-02-05T18:13:02-05:00</updated>
+  <id>http://christinachang.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
