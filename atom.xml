@@ -4,10 +4,10 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://christinachang.github.com/atom.xml" rel="self"/>
   <link href="http://christinachang.github.com/"/>
-  <updated>2013-02-05T18:41:12-05:00</updated>
+  <updated>2013-02-17T12:03:46-05:00</updated>
   <id>http://christinachang.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Christina Chang]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -18,7 +18,11 @@
     <link href="http://christinachang.github.com/blog/2013/02/05/hello-world/"/>
     <updated>2013-02-05T18:17:00-05:00</updated>
     <id>http://christinachang.github.com/blog/2013/02/05/hello-world</id>
-    <content type="html"><![CDATA[<p>Hi! Testing 1, 2, 3&#8230;.</p>
+    <content type="html"><![CDATA[<p>Up until recently, my experience with technology has primarily been as a consumer and end user. Whenever I interact with a beautifully designed website or a user friendly application, it would fill me with awe and wonder. &#8220;How was this made? How does it do what it does? It must be magic!&#8221;</p>
+
+<p>I also often think, &#8220;It would be great if there was an app that could do x, y or z,&#8221; or &#8220;This tool would be so much easier to use if&#8230; blah blah blah.&#8221;</p>
+
+<p>Those thoughts and ideas eventually evolved into the desire to take the initiative to learn to build products myself. And that has led me to The Flatiron School where I am today, learning to code and demystifying the magical powers of the Internet and technology. My goal for the next three months is to learn as much as I can and go on to help create something that will make a positive difference in the world.</p>
 ]]></content>
   </entry>
   
