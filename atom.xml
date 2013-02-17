@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://christinachang.github.com/atom.xml" rel="self"/>
   <link href="http://christinachang.github.com/"/>
-  <updated>2013-02-17T12:03:46-05:00</updated>
+  <updated>2013-02-17T12:05:16-05:00</updated>
   <id>http://christinachang.github.com/</id>
   <author>
     <name><![CDATA[Christina Chang]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
+    <title type="html"><![CDATA[Why I'm Learning to Code]]></title>
     <link href="http://christinachang.github.com/blog/2013/02/05/hello-world/"/>
     <updated>2013-02-05T18:17:00-05:00</updated>
     <id>http://christinachang.github.com/blog/2013/02/05/hello-world</id>
