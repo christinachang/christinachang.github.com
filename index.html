@@ -125,12 +125,10 @@
 
 <p>After gathering all the relevant components of the recipe page, I used HTML syntax to describe the structure of the email body. To marry the email structure with the actual recipe content, I created a (rather large) HTML string variable as shown below.</p>
 
-<p>  def set_content(name, image, url, servings, ingredients, instructions)</p>
-
-<pre><code>self.content = "&lt;h2&gt;" + name + "&lt;/h2&gt;"
-self.content += "&lt;img src=" + image + "&gt;&lt;br&gt;"
-self.content += "&lt;br&gt;&lt;a href='#{url}' target='_blank'&gt;" + url + "&lt;/a&gt;"
-self.content += "&lt;br&gt;&lt;h3&gt;Yield: &lt;/h3&gt;&lt;p&gt;" + servings + "&lt;/p&gt;"
+<pre><code>self.content = "&lt;h2&gt;" + recipe_name + "&lt;/h2&gt;"
+self.content += "&lt;img src=" + recipe_image + "&gt;&lt;br&gt;"
+self.content += "&lt;br&gt;&lt;a href='#{url}' target='_blank'&gt;" + recipe_url + "&lt;/a&gt;"
+self.content += "&lt;br&gt;&lt;h3&gt;Yield: &lt;/h3&gt;&lt;p&gt;" + recipe_servings + "&lt;/p&gt;"
 self.content += "&lt;h3&gt;Ingredients:&lt;/h3&gt;"
 self.content += "&lt;ul&gt;"
 
@@ -146,19 +144,19 @@ instructions.each do |instruction|
 end
 </code></pre>
 
-<p>  end</p>
-
 <p>My full code can be accessed <a href="https://github.com/christinachang/recipe_scraper">here.</a></p>
 
 <p>While writing this script, I found the following resources extremely helpful:</p>
 
-<ul>
-  <li><strong>HTML Parsing</strong></li>
-<a href="http://ruby.bastardsbook.com/chapters/html-parsing/">http://ruby.bastardsbook.com/chapters/html-parsing/</a>
+<ul><strong>HTML Parsing</strong>
+<li><a href="http://ruby.bastardsbook.com/chapters/html-parsing/">http://ruby.bastardsbook.com/chapters/html-parsing/</a></li>
+</ul>
 
-<li><strong>CSS Selectors</strong></li>
-<a href="http://www.w3schools.com/cssref/css_selectors.asp">http://www.w3schools.com/cssref/css_selectors.asp</a>
 
+
+
+<ul><strong>CSS Selectors</strong>
+<li><a href="http://www.w3schools.com/cssref/css_selectors.asp">http://www.w3schools.com/cssref/css_selectors.asp</a></li>
 </ul>
 
 
