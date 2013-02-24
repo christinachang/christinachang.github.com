@@ -4,7 +4,7 @@
   <title><![CDATA[Head in the Cloud]]></title>
   <link href="http://christinachang.github.com/atom.xml" rel="self"/>
   <link href="http://christinachang.github.com/"/>
-  <updated>2013-02-23T15:17:12-05:00</updated>
+  <updated>2013-02-23T19:53:00-05:00</updated>
   <id>http://christinachang.github.com/</id>
   <author>
     <name><![CDATA[Christina Chang]]></name>
@@ -12,6 +12,84 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Food for Thought - How to Scrape and Email Recipes from Epicurious.com]]></title>
+    <link href="http://christinachang.github.com/blog/2013/02/23/recipe-scraper/"/>
+    <updated>2013-02-23T17:16:00-05:00</updated>
+    <id>http://christinachang.github.com/blog/2013/02/23/recipe-scraper</id>
+    <content type="html"><![CDATA[<p>Last week, I presented at the <a href="http://www.meetup.com/nyc-on-rails/events/105048012/">NYC on Rails Meetup</a> on the topic of data/messaging mashups. A common mashup pattern combines a data source with a messaging service (Twitter, e-mail, etc). For the presentation, I wrote a script that scrapes and emails the recipe of the day from Epicurious.com. This post summarizes the steps of how I did it.</p>
+
+<h2>How to Scrape and Email Recipes from Epicurious.com</h2>
+
+
+
+
+<h3>Download Gems and APIs</h3>
+
+
+<p>To get the content of the recipes, I used the <a href="http://nokogiri.org/">Nokogiri</a> gem which allows you to parse HTML by searching documents via CSS selectors. To send the recipe in an email, I used the <a href="https://postmarkapp.com/">Postmark</a> API. The &#8220;open-uri&#8221; library is also required to open up links.</p>
+
+<h3>Identify the CSS selector for &#8220;Recipe of the Day&#8221; element</h3>
+
+
+<p>Using the inspect tool in my browser, I found the appropriate CSS selector and HTML node path that corresponds to the link to the Recipe of the Day. To get the actual link of the recipe, I needed the HREF attribute of the &#8221;<a>&#8221; tag. Since that is a relative path to the recipe page, I needed to concatenate the homepage url (www.epicurious.com) with the relative path (/recipes/food/views/51143030).</p>
+
+<p><img src="http://christinachang.github.com/images/recipe scraper images/recipe_of_day_link.png"></p>
+
+<h3>Parse HTML from Recipe Page</h3>
+
+
+<p>The basic structure of each recipe page is the same. I only wanted the most important components of the recipe - the name, image, yield, ingredients, and preparation instructions - to be included in the email. Similar to the above step, I used the inspector tool to identify the corresponding node and CSS selector for each recipe component.</p>
+
+<p>An important thing to note is that the CSS method returns an array of XML element objects (see image below) and not just the text itself. I used the &#8220;text&#8221; method to convert these elements into human readable format.</p>
+
+<p><img src="http://christinachang.github.com/images/recipe scraper images/ingredients.png"></p>
+
+<h3>Create HTML String Variable for Email Body</h3>
+
+
+<p>After gathering all the relevant components of the recipe page, I used HTML syntax to describe the structure of the email body. To marry the email structure with the actual recipe content, I created a (rather large) HTML string variable as shown below.</p>
+
+<p>&#8221;&#8217;ruby</p>
+
+<p>def set_content(name, image, url, servings, ingredients, instructions)</p>
+
+<pre><code>self.content = "&lt;h2&gt;" + name + "&lt;/h2&gt;"
+self.content += "&lt;img src=" + image + "&gt;&lt;br&gt;"
+self.content += "&lt;br&gt;&lt;a href='#{url}' target='_blank'&gt;" + url + "&lt;/a&gt;"
+self.content += "&lt;br&gt;&lt;h3&gt;Yield: &lt;/h3&gt;&lt;p&gt;" + servings + "&lt;/p&gt;"
+self.content += "&lt;h3&gt;Ingredients:&lt;/h3&gt;"
+self.content += "&lt;ul&gt;"
+
+ingredients.each do |ingredient|
+  self.content += "&lt;li&gt;" + ingredient.to_s + "&lt;/li&gt;"
+end
+
+self.content += "&lt;/ul&gt;"
+self.content += "&lt;h3&gt;Preparation:&lt;/h3&gt;"
+
+instructions.each do |instruction|
+  self.content += "&lt;p&gt;" + instruction.to_s + "&lt;/p&gt;"
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>&#8221;&#8217;</p>
+
+<p>My full code can be accessed <a href: "https://github.com/christinachang/recipe_scraper"> here.</a></p>
+
+<p>While writing this script, I found the following resources extremely helpful:
+<strong>HTML Parsing</strong>
+http://ruby.bastardsbook.com/chapters/html-parsing/</p>
+
+<p><strong>CSS Selectors</strong>
+http://www.w3schools.com/cssref/css_selectors.asp</p>
+
+<p>Happy Cooking!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Why I'm Learning to Code]]></title>
