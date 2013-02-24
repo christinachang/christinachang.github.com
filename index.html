@@ -108,7 +108,7 @@
 <h3>Identify the CSS selector for &#8220;Recipe of the Day&#8221; element</h3>
 
 
-<p>Using the inspect tool in my browser, I found the appropriate CSS selector and HTML node path that corresponds to the link to the Recipe of the Day. To get the actual link of the recipe, I needed the HREF attribute of the &#8221;<a>&#8221; tag. Since that is a relative path to the recipe page, I needed to concatenate the homepage url (www.epicurious.com) with the relative path (/recipes/food/views/51143030).</p>
+<p>Using the inspect tool in my browser, I found the appropriate CSS selector and HTML node path that corresponds to the link to the Recipe of the Day. To get the actual link of the recipe, I needed the HREF attribute of the /&#8221;<a>&#8221; tag. Since that is a relative path to the recipe page, I needed to concatenate the homepage url (www.epicurious.com) with the relative path (/recipes/food/views/51143030).</p>
 
 <p><img src="/images/recipe scraper images/recipe_of_day_link.png"></p>
 
@@ -126,41 +126,44 @@
 
 <p>After gathering all the relevant components of the recipe page, I used HTML syntax to describe the structure of the email body. To marry the email structure with the actual recipe content, I created a (rather large) HTML string variable as shown below.</p>
 
-<p>&#8221;&#8217;ruby</p>
+<p>&#8221;&#8217;ruby
+  def set_content(name, image, url, servings, ingredients, instructions)</p>
 
-<p>def set_content(name, image, url, servings, ingredients, instructions)</p>
+<pre><code>  self.content = "&lt;h2&gt;" + name + "&lt;/h2&gt;"
+  self.content += "&lt;img src=" + image + "&gt;&lt;br&gt;"
+  self.content += "&lt;br&gt;&lt;a href='#{url}' target='_blank'&gt;" + url + "&lt;/a&gt;"
+  self.content += "&lt;br&gt;&lt;h3&gt;Yield: &lt;/h3&gt;&lt;p&gt;" + servings + "&lt;/p&gt;"
+  self.content += "&lt;h3&gt;Ingredients:&lt;/h3&gt;"
+  self.content += "&lt;ul&gt;"
 
-<pre><code>self.content = "&lt;h2&gt;" + name + "&lt;/h2&gt;"
-self.content += "&lt;img src=" + image + "&gt;&lt;br&gt;"
-self.content += "&lt;br&gt;&lt;a href='#{url}' target='_blank'&gt;" + url + "&lt;/a&gt;"
-self.content += "&lt;br&gt;&lt;h3&gt;Yield: &lt;/h3&gt;&lt;p&gt;" + servings + "&lt;/p&gt;"
-self.content += "&lt;h3&gt;Ingredients:&lt;/h3&gt;"
-self.content += "&lt;ul&gt;"
+  ingredients.each do |ingredient|
+    self.content += "&lt;li&gt;" + ingredient.to_s + "&lt;/li&gt;"
+  end
 
-ingredients.each do |ingredient|
-  self.content += "&lt;li&gt;" + ingredient.to_s + "&lt;/li&gt;"
-end
+  self.content += "&lt;/ul&gt;"
+  self.content += "&lt;h3&gt;Preparation:&lt;/h3&gt;"
 
-self.content += "&lt;/ul&gt;"
-self.content += "&lt;h3&gt;Preparation:&lt;/h3&gt;"
-
-instructions.each do |instruction|
-  self.content += "&lt;p&gt;" + instruction.to_s + "&lt;/p&gt;"
+  instructions.each do |instruction|
+    self.content += "&lt;p&gt;" + instruction.to_s + "&lt;/p&gt;"
+  end
 end
 </code></pre>
-
-<p>  end</p>
 
 <p>&#8221;&#8217;</p>
 
 <p>My full code can be accessed <a href: "https://github.com/christinachang/recipe_scraper"> here.</a></p>
 
-<p>While writing this script, I found the following resources extremely helpful:
-<strong>HTML Parsing</strong>
-http://ruby.bastardsbook.com/chapters/html-parsing/</p>
+<p>While writing this script, I found the following resources extremely helpful:</p>
 
-<p><strong>CSS Selectors</strong>
-http://www.w3schools.com/cssref/css_selectors.asp</p>
+<ul>
+  <li><strong>HTML Parsing</strong></li>
+http://ruby.bastardsbook.com/chapters/html-parsing/
+
+<li><strong>CSS Selectors</strong></li>
+http://www.w3schools.com/cssref/css_selectors.asp
+
+</ul>
+
 
 <p>Happy Cooking!</p>
 </div>
