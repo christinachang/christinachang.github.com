@@ -70,7 +70,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/23/recipe-scraper/">Food for Thought - How to Scrape and Email Recipes From Epicurious.com</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/02/23/recipe-scraper/">How to Scrape and Email Recipes From Epicurious.com</a></h1>
     
     
       <p class="meta">
@@ -95,24 +95,24 @@
 
   <div class="entry-content"><p>Last week, I presented at the <a href="http://www.meetup.com/nyc-on-rails/events/105048012/">NYC on Rails Meetup</a> on the topic of data/messaging mashups. A common mashup pattern combines a data source with a messaging service (Twitter, e-mail, etc). For the presentation, I wrote a script that scrapes and emails the recipe of the day from Epicurious.com. This post summarizes the steps of how I did it.</p>
 
-<h2>How to Scrape and Email Recipes from Epicurious.com</h2>
+<h2>Basic Steps</h2>
 
 
 
 
-<h3>Download Gems and APIs</h3>
+<h4>Download Gems and APIs</h4>
 
 
 <p>To get the content of the recipes, I used the <a href="http://nokogiri.org/">Nokogiri</a> gem which allows you to parse HTML by searching documents via CSS selectors. To send the recipe in an email, I used the <a href="https://postmarkapp.com/">Postmark</a> API. The &#8220;open-uri&#8221; library is also required to open up links.</p>
 
-<h3>Identify the CSS selector for &#8220;Recipe of the Day&#8221; element</h3>
+<h4>Identify the CSS selector for &#8220;Recipe of the Day&#8221; element</h4>
 
 
 <p>Using the inspect tool in my browser, I found the appropriate CSS selector and HTML node path that corresponds to the link to the Recipe of the Day. To get the actual link of the recipe, I needed the HREF attribute of the /&#8221;<a>&#8221; tag. Since that is a relative path to the recipe page, I needed to concatenate the homepage url (www.epicurious.com) with the relative path (/recipes/food/views/51143030).</p>
 
 <p><img src="/images/recipe scraper images/recipe_of_day_link.png"></p>
 
-<h3>Parse HTML from Recipe Page</h3>
+<h4>Parse HTML from Recipe Page</h4>
 
 
 <p>The basic structure of each recipe page is the same. I only wanted the most important components of the recipe - the name, image, yield, ingredients, and preparation instructions - to be included in the email. Similar to the above step, I used the inspector tool to identify the corresponding node and CSS selector for each recipe component.</p>
@@ -121,7 +121,7 @@
 
 <p><img src="/images/recipe scraper images/ingredients.png"></p>
 
-<h3>Create HTML String Variable for Email Body</h3>
+<h4>Create HTML String Variable for Email Body</h4>
 
 
 <p>After gathering all the relevant components of the recipe page, I used HTML syntax to describe the structure of the email body. To marry the email structure with the actual recipe content, I created a (rather large) HTML string variable as shown below.</p>
@@ -151,16 +151,16 @@ end
 
 <p>&#8221;&#8217;</p>
 
-<p>My full code can be accessed <a href: "https://github.com/christinachang/recipe_scraper"> here.</a></p>
+<p>My full code can be accessed <a href="https://github.com/christinachang/recipe_scraper">here.</a></p>
 
 <p>While writing this script, I found the following resources extremely helpful:</p>
 
 <ul>
   <li><strong>HTML Parsing</strong></li>
-http://ruby.bastardsbook.com/chapters/html-parsing/
+<a>http://ruby.bastardsbook.com/chapters/html-parsing/</a>
 
 <li><strong>CSS Selectors</strong></li>
-http://www.w3schools.com/cssref/css_selectors.asp
+<a>http://www.w3schools.com/cssref/css_selectors.asp</a>
 
 </ul>
 
@@ -226,7 +226,7 @@ http://www.w3schools.com/cssref/css_selectors.asp
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/02/23/recipe-scraper/">Food for Thought - How to Scrape and Email Recipes from Epicurious.com</a>
+        <a href="/blog/2013/02/23/recipe-scraper/">How to Scrape and Email Recipes from Epicurious.com</a>
       </li>
     
       <li class="post">
