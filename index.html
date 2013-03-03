@@ -9,7 +9,7 @@
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="Last week, I presented at the NYC on Rails Meetup on the topic of data/messaging mashups. A common mashup pattern combines a data source with a &hellip;">
+  <meta name="description" content="Have you ever experienced the problem of using your Terminal to run some Ruby code only to realize that you&#8217;re not using the version of Ruby &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/03/rvm-versions-of-ruby/">Setting a Default Version of Ruby</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-03T17:09:00-05:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/03/rvm-versions-of-ruby/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Have you ever experienced the problem of using your Terminal to run some Ruby code only to realize that you&#8217;re not using the version of Ruby that you want? And although you have the latest version installed, Terminal somehow keeps mysteriously reverting to a different version?</p>
+
+<p>I came across this issue a couple of weeks ago and learned that it&#8217;s good practice to explicitly set a default version of Ruby to avoid unexpected results. This is where the Ruby Version Manager (RVM), a tool for installing and managing several different versions and implementations of Ruby on one computer, comes in really handy.</p>
+
+<p>Once you have <a href="https://rvm.io/rvm/install/">RVM installed</a>, go into your terminal and type &#8220;rvm list&#8221; to see all the versions of Ruby that are installed on your computer.</p>
+
+<p>The output also tells you what version you&#8217;re currently using and what the default version is if there is one set.</p>
+
+<p><img src="/images/rvm_list.png"></p>
+
+<p>To set a specific version of Ruby, say the latest version (currently 1.9.3-p374), as your default, type:</p>
+
+<p><code>rvm use ruby-1.9.3-p374 --default</code></p>
+
+<p>You can always change the current version that you&#8217;re using or the default by repeating these steps.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -235,6 +287,10 @@ end
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/03/rvm-versions-of-ruby/">Setting a Default Version of Ruby</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/23/recipe-scraper/">How to Scrape and Email Recipes from Epicurious.com</a>

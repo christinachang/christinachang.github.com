@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Why I'm Learning to Code - Head in the Cloud</title>
+  <title>Setting a Default Version of Ruby - Head in the Cloud</title>
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="Up until recently, my experience with technology has primarily been as a consumer and end user. Whenever I interact with a beautifully designed &hellip;">
+  <meta name="description" content="Have you ever experienced the problem of using your Terminal to run some Ruby code only to realize that you&#8217;re not using the version of Ruby &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://christinachang.github.com/blog/2013/02/05/hello-world/">
+  <link rel="canonical" href="http://christinachang.github.com/blog/2013/03/03/rvm-versions-of-ruby/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Why I'm Learning to Code</h1>
+      <h1 class="entry-title">Setting a Default Version of Ruby</h1>
     
     
       <p class="meta">
@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2013-02-05T18:17:00-05:00" pubdate data-updated="true">Feb 5<span>th</span>, 2013</time>
+<time datetime="2013-03-03T17:09:00-05:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,11 +104,21 @@
   </header>
 
 
-<div class="entry-content"><p>Up until recently, my experience with technology has primarily been as a consumer and end user. Whenever I interact with a beautifully designed website or a user friendly application, it would fill me with awe and wonder. &#8220;How was this made? How does it do what it does? It must be magic!&#8221;</p>
+<div class="entry-content"><p>Have you ever experienced the problem of using your Terminal to run some Ruby code only to realize that you&#8217;re not using the version of Ruby that you want? And although you have the latest version installed, Terminal somehow keeps mysteriously reverting to a different version?</p>
 
-<p>I also often think, &#8220;It would be great if there was an app that could do x, y or z,&#8221; or &#8220;This tool would be so much easier to use if&#8230; blah blah blah.&#8221;</p>
+<p>I came across this issue a couple of weeks ago and learned that it&#8217;s good practice to explicitly set a default version of Ruby to avoid unexpected results. This is where the Ruby Version Manager (RVM), a tool for installing and managing several different versions and implementations of Ruby on one computer, comes in really handy.</p>
 
-<p>Those thoughts and ideas eventually evolved into the desire to take the initiative to learn to build products myself. And that has led me to The Flatiron School where I am today, learning to code and demystifying the magical powers of the Internet and technology. My goal for the next three months is to learn as much as I can and go on to help create something that will make a positive difference in the world.</p>
+<p>Once you have <a href="https://rvm.io/rvm/install/">RVM installed</a>, go into your terminal and type &#8220;rvm list&#8221; to see all the versions of Ruby that are installed on your computer.</p>
+
+<p>The output also tells you what version you&#8217;re currently using and what the default version is if there is one set.</p>
+
+<p><img src="/images/rvm_list.png"></p>
+
+<p>To set a specific version of Ruby, say the latest version (currently 1.9.3-p374), as your default, type:</p>
+
+<p><code>rvm use ruby-1.9.3-p374 --default</code></p>
+
+<p>You can always change the current version that you&#8217;re using or the default by repeating these steps.</p>
 </div>
 
 
@@ -131,7 +141,7 @@
   
 
 
-<time datetime="2013-02-05T18:17:00-05:00" pubdate data-updated="true">Feb 5<span>th</span>, 2013</time>
+<time datetime="2013-03-03T17:09:00-05:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2013</time>
       
 
 
@@ -139,7 +149,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/02/05/hello-world/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/02/05/hello-world/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/03/03/rvm-versions-of-ruby/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/03/03/rvm-versions-of-ruby/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -152,8 +162,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/02/23/recipe-scraper/" title="Previous Post: How to Scrape and Email Recipes from Epicurious.com">&laquo; How to Scrape and Email Recipes from Epicurious.com</a>
       
-        <a class="basic-alignment right" href="/blog/2013/02/23/recipe-scraper/" title="Next Post: How to Scrape and Email Recipes from Epicurious.com">How to Scrape and Email Recipes from Epicurious.com &raquo;</a>
       
     </p>
   </footer>
@@ -257,8 +267,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://christinachang.github.com/blog/2013/02/05/hello-world/';
-        var disqus_url = 'http://christinachang.github.com/blog/2013/02/05/hello-world/';
+        var disqus_identifier = 'http://christinachang.github.com/blog/2013/03/03/rvm-versions-of-ruby/';
+        var disqus_url = 'http://christinachang.github.com/blog/2013/03/03/rvm-versions-of-ruby/';
         var disqus_script = 'embed.js';
       
     (function () {

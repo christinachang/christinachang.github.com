@@ -4,7 +4,7 @@
   <title><![CDATA[Head in the Cloud]]></title>
   <link href="http://christinachang.github.com/atom.xml" rel="self"/>
   <link href="http://christinachang.github.com/"/>
-  <updated>2013-02-26T18:03:42-05:00</updated>
+  <updated>2013-03-03T18:07:11-05:00</updated>
   <id>http://christinachang.github.com/</id>
   <author>
     <name><![CDATA[Christina Chang]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Setting a Default Version of Ruby]]></title>
+    <link href="http://christinachang.github.com/blog/2013/03/03/rvm-versions-of-ruby/"/>
+    <updated>2013-03-03T17:09:00-05:00</updated>
+    <id>http://christinachang.github.com/blog/2013/03/03/rvm-versions-of-ruby</id>
+    <content type="html"><![CDATA[<p>Have you ever experienced the problem of using your Terminal to run some Ruby code only to realize that you&#8217;re not using the version of Ruby that you want? And although you have the latest version installed, Terminal somehow keeps mysteriously reverting to a different version?</p>
+
+<p>I came across this issue a couple of weeks ago and learned that it&#8217;s good practice to explicitly set a default version of Ruby to avoid unexpected results. This is where the Ruby Version Manager (RVM), a tool for installing and managing several different versions and implementations of Ruby on one computer, comes in really handy.</p>
+
+<p>Once you have <a href="https://rvm.io/rvm/install/">RVM installed</a>, go into your terminal and type &#8220;rvm list&#8221; to see all the versions of Ruby that are installed on your computer.</p>
+
+<p>The output also tells you what version you&#8217;re currently using and what the default version is if there is one set.</p>
+
+<p><img src="http://christinachang.github.com/images/rvm_list.png"></p>
+
+<p>To set a specific version of Ruby, say the latest version (currently 1.9.3-p374), as your default, type:</p>
+
+<p><code>rvm use ruby-1.9.3-p374 --default</code></p>
+
+<p>You can always change the current version that you&#8217;re using or the default by repeating these steps.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Scrape and Email Recipes from Epicurious.com]]></title>
