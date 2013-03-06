@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Head in the Cloud</title>
+  <title>Who You Callin' a Foo?! - Head in the Cloud</title>
   <meta name="author" content="Christina Chang">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://christinachang.github.com/">
+  <link rel="canonical" href="http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -74,15 +74,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/03/05/who-you-callin-a-foo/">Who You Callin&#8217; a Foo?!</a></h1>
+      <h1 class="entry-title">Who You Callin' a Foo?!</h1>
     
     
       <p class="meta">
@@ -100,14 +97,14 @@
 
 <time datetime="2013-03-05T19:46:00-05:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/03/05/who-you-callin-a-foo/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h3>Searching for the Origins of &#8220;foobar&#8221;</h3>
+<div class="entry-content"><h3>Searching for the Origins of &#8220;foobar&#8221;</h3>
 
 
 <p>While reading programming books and online resources, I often come across the all-purpose placeholder terms &#8220;foo&#8221;, &#8220;bar&#8221;, and &#8220;baz&#8221; in code examples. For the non-programmers out there, these terms are used to name entities such as variables, functions, and commands in order to demonstrate a concept.</p>
@@ -122,74 +119,16 @@
 
 <p>The exact relationships between foo, FUBAR, and foo/bar in a programming context are not known with certainty but anecdotal theories abound. You can learn more about the etymology of <em>foo</em> in the Internet Engineering Task Force (IETF) <a href="http://www.faqs.org/rfcs/rfc3092.html" target="_blank">RFC 3092</a>. It&#8217;s pretty interesting reading.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/03/rvm-versions-of-ruby/">Setting a Default Version of Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Christina Chang</span></span>
 
-<time datetime="2013-03-03T17:09:00-05:00" pubdate data-updated="true">Mar 3<span>rd</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/03/rvm-versions-of-ruby/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Have you ever experienced the problem of using your Terminal to run some Ruby code only to realize that you&#8217;re not using the version of Ruby that you want? And although you have the latest version installed, Terminal somehow keeps mysteriously reverting to a different version?</p>
-
-<p>I came across this issue a couple of weeks ago and learned that it&#8217;s good practice to explicitly set a default version of Ruby to avoid unexpected results. This is where the Ruby Version Manager (RVM), a tool for installing and managing several different versions and implementations of Ruby on one computer, comes in really handy.</p>
-
-<p>Once you have <a href="https://rvm.io/rvm/install/">RVM installed</a>, go into your terminal and type &#8220;rvm list&#8221; to see all the versions of Ruby that are installed on your computer.</p>
-
-<p>The output also tells you what version you&#8217;re currently using and what the default version is if there is one set.</p>
-
-<p><img src="/images/rvm_list.png"></p>
-
-<p>To set a specific version of Ruby, say the latest version (currently 1.9.3-p374), as your default, type:</p>
-
-<p><code>rvm use ruby-1.9.3-p374 --default</code></p>
-
-<p>You can always change the current version that you&#8217;re using or the default by repeating these steps.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/23/recipe-scraper/">How to Scrape and Email Recipes From Epicurious.com</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -201,138 +140,42 @@
   
 
 
-<time datetime="2013-02-23T17:16:00-05:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/23/recipe-scraper/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Last week, I presented at the <a href="http://www.meetup.com/nyc-on-rails/events/105048012/">NYC on Rails Meetup</a> on the topic of data/messaging mashups. A common mashup pattern combines a data source with a messaging service (Twitter, e-mail, etc). For the presentation, I wrote a script that scrapes and emails the recipe of the day from Epicurious.com. This post summarizes the steps of how I did it.</p>
-
-<h2>Basic Steps</h2>
-
-
-
-
-<h4>Download Gems and APIs</h4>
-
-
-<p>To get the content of the recipes, I used the <a href="http://nokogiri.org/">Nokogiri</a> gem which allows you to parse HTML by searching documents via CSS selectors. To send the recipe in an email, I used the <a href="https://postmarkapp.com/">Postmark</a> API. The &#8220;open-uri&#8221; library is also required to open up links.</p>
-
-<h4>Identify the CSS selector for &#8220;Recipe of the Day&#8221; element</h4>
-
-
-<p>Using the inspect tool in my browser, I found the appropriate CSS selector and HTML node path that corresponds to the link to the Recipe of the Day. To get the actual link of the recipe, I needed the HREF attribute of the &#8220;a&#8221; tag. Since that is a relative path to the recipe page, I needed to concatenate the homepage url (www.epicurious.com) with the relative path (/recipes/food/views/51143030).</p>
-
-<p><img src="/images/recipe scraper images/recipe_of_day_link.png"></p>
-
-<h4>Parse HTML from Recipe Page</h4>
-
-
-<p>The basic structure of each recipe page is the same. I only wanted the most important components of the recipe - the name, image, yield, ingredients, and preparation instructions - to be included in the email. Similar to the above step, I used the inspector tool to identify the corresponding node and CSS selector for each recipe component.</p>
-
-<p>An important thing to note is that the CSS method returns an array of XML element objects (see image below) and not just the text itself. I used the &#8220;text&#8221; method to convert these elements into human readable format.
-<img src="/images/recipe scraper images/ingredients.png"></p>
-
-<h4>Create HTML String Variable for Email Body</h4>
-
-
-<p>After gathering all the relevant components of the recipe page, I used HTML syntax to describe the structure of the email body. To marry the email structure with the actual recipe content, I created a (rather large) HTML string variable as shown below.</p>
-
-<pre><code>self.content = "&lt;h2&gt;" + recipe_name + "&lt;/h2&gt;"
-self.content += "&lt;img src=" + recipe_image + "&gt;&lt;br&gt;"
-self.content += "&lt;br&gt;&lt;a href='#{url}' target='_blank'&gt;" + recipe_url + "&lt;/a&gt;"
-self.content += "&lt;br&gt;&lt;h3&gt;Yield: &lt;/h3&gt;&lt;p&gt;" + recipe_servings + "&lt;/p&gt;"
-self.content += "&lt;h3&gt;Ingredients:&lt;/h3&gt;"
-self.content += "&lt;ul&gt;"
-
-ingredients.each do |ingredient|
-  self.content += "&lt;li&gt;" + ingredient.to_s + "&lt;/li&gt;"
-end
-
-self.content += "&lt;/ul&gt;"
-self.content += "&lt;h3&gt;Preparation:&lt;/h3&gt;"
-
-instructions.each do |instruction|
-  self.content += "&lt;p&gt;" + instruction.to_s + "&lt;/p&gt;"
-end
-</code></pre>
-
-<p>My full code can be accessed <a href="https://github.com/christinachang/recipe_scraper">here.</a></p>
-
-<p>While writing this script, I found the following resources extremely helpful:</p>
-
-<ul><strong>HTML Parsing</strong>
-<li><a href="http://ruby.bastardsbook.com/chapters/html-parsing/">http://ruby.bastardsbook.com/chapters/html-parsing/</a></li>
-</ul>
-
-
-
-
-<ul><strong>CSS Selectors</strong>
-<li><a href="http://www.w3schools.com/cssref/css_selectors.asp">http://www.w3schools.com/cssref/css_selectors.asp</a></li>
-</ul>
-
-
-<p>Happy Cooking!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-03-05T19:46:00-05:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/05/hello-world/">Why I&#8217;m Learning to Code</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+      <div class="sharing">
   
-
-
-<time datetime="2013-02-05T18:17:00-05:00" pubdate data-updated="true">Feb 5<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/05/hello-world/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Up until recently, my experience with technology has primarily been as a consumer and end user. Whenever I interact with a beautifully designed website or a user friendly application, it would fill me with awe and wonder. &#8220;How was this made? How does it do what it does? It must be magic!&#8221;</p>
-
-<p>I also often think, &#8220;It would be great if there was an app that could do x, y or z,&#8221; or &#8220;This tool would be so much easier to use if&#8230; blah blah blah.&#8221;</p>
-
-<p>Those thoughts and ideas eventually evolved into the desire to take the initiative to learn to build products myself. And that has led me to The Flatiron School where I am today, learning to code and demystifying the magical powers of the Internet and technology. My goal for the next three months is to learn as much as I can and go on to help create something that will make a positive difference in the world.</p>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/03/rvm-versions-of-ruby/" title="Previous Post: Setting a Default Version of Ruby">&laquo; Setting a Default Version of Ruby</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -340,7 +183,7 @@ end
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/03/05/who-you-callin-a-foo/">Who You Callin&#8217; a Foo?!</a>
+        <a href="/blog/2013/03/05/who-you-callin-a-foo/">Who You Callin' a Foo?!</a>
       </li>
     
       <li class="post">
@@ -352,7 +195,7 @@ end
       </li>
     
       <li class="post">
-        <a href="/blog/2013/02/05/hello-world/">Why I&#8217;m Learning to Code</a>
+        <a href="/blog/2013/02/05/hello-world/">Why I'm Learning to Code</a>
       </li>
     
   </ul>
@@ -361,7 +204,7 @@ end
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/christinachang">@christinachang</a> on GitHub
@@ -391,7 +234,7 @@ end
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -411,6 +254,7 @@ end
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -425,7 +269,10 @@ end
       var disqus_shortname = 'christinachang';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/';
+        var disqus_url = 'http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

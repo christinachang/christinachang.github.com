@@ -4,7 +4,7 @@
   <title><![CDATA[Head in the Cloud]]></title>
   <link href="http://christinachang.github.com/atom.xml" rel="self"/>
   <link href="http://christinachang.github.com/"/>
-  <updated>2013-03-03T18:07:11-05:00</updated>
+  <updated>2013-03-05T20:59:23-05:00</updated>
   <id>http://christinachang.github.com/</id>
   <author>
     <name><![CDATA[Christina Chang]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Who You Callin' a Foo?!]]></title>
+    <link href="http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/"/>
+    <updated>2013-03-05T19:46:00-05:00</updated>
+    <id>http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo</id>
+    <content type="html"><![CDATA[<h3>Searching for the Origins of &#8220;foobar&#8221;</h3>
+
+
+<p>While reading programming books and online resources, I often come across the all-purpose placeholder terms &#8220;foo&#8221;, &#8220;bar&#8221;, and &#8220;baz&#8221; in code examples. For the non-programmers out there, these terms are used to name entities such as variables, functions, and commands in order to demonstrate a concept.</p>
+
+<p>I was curious about the origins of these terms and did some investigative research (i.e. looked it up on <a href="http://en.wikipedia.org/wiki/Foobar" target="_blank">Wikipedia</a>). What I found was pretty interesting.</p>
+
+<p><em>Foo</em> first originated as a nonsense word in the 1930s when it appeared in a comic called Smokey Stover by Bill Holman who stated that he used the word after seeing it on the bottom of a jade figurine in Chinatown, San Francisco. The Chinese word transliterated as &#8220;fu&#8221; means good luck.</p>
+
+<p>The term then evolved into military slang in the 1940s, merging with the term FUBAR, which stands for &#8220;F**ked Up Beyond All Repair.&#8221; During WWII, the term &#8216;foo fighters&#8217; was used to describe UFOs (so <em>that&#8217;s</em> where the Foo Fighters got its name!).</p>
+
+<p>The use of <em>foo</em> in a programming context may have begun in the 1960s by the Tech Model Railroad Club (TMRC), a student organization that built model trains and systems. The term <em>foobar</em> first appeared in system manuals by Digital Equipment Corporation in the 1960s and early 1970s.</p>
+
+<p>The exact relationships between foo, FUBAR, and foo/bar in a programming context are not known with certainty but anecdotal theories abound. You can learn more about the etymology of <em>foo</em> in the Internet Engineering Task Force (IETF) <a href="http://www.faqs.org/rfcs/rfc3092.html" target="_blank">RFC 3092</a>. It&#8217;s pretty interesting reading.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setting a Default Version of Ruby]]></title>
