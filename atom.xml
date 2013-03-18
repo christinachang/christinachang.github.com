@@ -4,7 +4,7 @@
   <title><![CDATA[Head in the Cloud]]></title>
   <link href="http://christinachang.github.com/atom.xml" rel="self"/>
   <link href="http://christinachang.github.com/"/>
-  <updated>2013-03-05T20:59:23-05:00</updated>
+  <updated>2013-03-17T19:18:18-04:00</updated>
   <id>http://christinachang.github.com/</id>
   <author>
     <name><![CDATA[Christina Chang]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Equal Operators: The Case of Mistaken Identity in JS]]></title>
+    <link href="http://christinachang.github.com/blog/2013/03/17/"/>
+    <updated>2013-03-17T18:35:00-04:00</updated>
+    <id>http://christinachang.github.com/blog/2013/03/</id>
+    <content type="html"><![CDATA[<p>A little tidbit I learned about Javascript and the equal operator:</p>
+
+<p>&#8217;=&#8217; denotes assignment.</p>
+
+<p>Example: var x = 10;</p>
+
+<p>&#8217;==&#8217; compares two values and returns a boolean (true or false).</p>
+
+<p>Example: 10 == &#8216;10&#8217; // returns true</p>
+
+<p>&#8217;===&#8217; compares both the values AND the type of the data.</p>
+
+<p>Example: 10 === &#8216;10&#8217; // returns false</p>
+
+<p>It&#8217;s important to know which operator to use to get the results you expect!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Who You Callin' a Foo?!]]></title>
