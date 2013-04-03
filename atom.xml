@@ -4,7 +4,7 @@
   <title><![CDATA[Head in the Cloud]]></title>
   <link href="http://christinachang.github.com/atom.xml" rel="self"/>
   <link href="http://christinachang.github.com/"/>
-  <updated>2013-03-17T19:18:18-04:00</updated>
+  <updated>2013-04-02T20:49:30-04:00</updated>
   <id>http://christinachang.github.com/</id>
   <author>
     <name><![CDATA[Christina Chang]]></name>
@@ -14,10 +14,68 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Getting Git]]></title>
+    <link href="http://christinachang.github.com/blog/2013/04/02/getting-git/"/>
+    <updated>2013-04-02T20:09:00-04:00</updated>
+    <id>http://christinachang.github.com/blog/2013/04/02/getting-git</id>
+    <content type="html"><![CDATA[<p>Since working on our group project a couple of weeks ago, I&#8217;ve gotten more familiar with using Git. After suffering through some painful merging of branches into master, I have learned some important lessons of what to do (e.g., make sure your local master is up to date before rebasing and merging branches!) and what <em>not</em> to do (e.g., panic and recklessly type arbitrary git commands in the middle of a rebase!)</p>
+
+<p>Here are 10 steps for Git success (for branching and merging):</p>
+
+<p>1) Before branching, make sure your local master is up to date with remote master.</p>
+
+<p>  <code>git pull origin master</code></p>
+
+<p>2) Create and check out a new branch.</p>
+
+<p>  <code>git checkout -b [NAME_OF_FEATURE_BRANCH]</code></p>
+
+<p>3) Do all your work on this branch. Once your branch is complete, check out master and make sure that your local master is up to date with the latest changes on master.</p>
+
+<p>  <code>git pull origin master</code></p>
+
+<p>4) Check out your feature branch.</p>
+
+<p>  <code>git co [FEATURE_BRANCH]</code></p>
+
+<p>5) From your feature branch, rebase master onto the feature branch.</p>
+
+<p>  <code>git rebase master</code></p>
+
+<p>6) Resolve all conflicts on the feature branch. After resolving conflicts in your files, add your changes and continue the rebase.</p>
+
+<p>  <code>git add . </code><br>
+  <code>git rebase --continue</code></p>
+
+<p>7) Once the rebase is complete, check out master.</p>
+
+<p>  <code>git co master</code></p>
+
+<p>8) Merge feature branch into master.</p>
+
+<p>  <code>git merge [FEATURE_BRANCH]</code></p>
+
+<p>9) Double check that all conflicts have been resolved and that your code is working properly.</p>
+
+<p>10) If everything looks good, push the merge to remote master.</p>
+
+<p>  <code>git push origin/master</code></p>
+
+<p>Some parting thoughts:<br>
+- Keep remote master clean. Write any new code on branches.<br>
+- Don&#8217;t branch off a feature branch. You should generally branch off master.<br>
+- Don&#8217;t merge a branch into master until the feature is fully complete.<br>
+- Keep your changes small so that you don&#8217;t spend too much time working on the same branch.<br>
+- Write succinct but descriptive commit messages.<br>
+- Once your branch is complete and merged, any new work should be done on a new branch.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Equal Operators: The Case of Mistaken Identity in JS]]></title>
-    <link href="http://christinachang.github.com/blog/2013/03/17/"/>
+    <link href="http://christinachang.github.com/blog/2013/03/17/equal-operators/"/>
     <updated>2013-03-17T18:35:00-04:00</updated>
-    <id>http://christinachang.github.com/blog/2013/03/</id>
+    <id>http://christinachang.github.com/blog/2013/03/17/equal-operators</id>
     <content type="html"><![CDATA[<p>A little tidbit I learned about Javascript and the equal operator:</p>
 
 <p>&#8217;=&#8217; denotes assignment.</p>

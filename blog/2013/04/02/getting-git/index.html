@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Head in the Cloud</title>
+  <title>Getting Git - Head in the Cloud</title>
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="Blog Archive 2013 Getting Git
-Apr 02 2013 Equal Operators: The Case of Mistaken Identity in JS
-Mar 17 2013 Who You Callin&#8217; a Foo?!
-Mar 05 2013 &hellip;">
+  <meta name="description" content="Since working on our group project a couple of weeks ago, I&#8217;ve gotten more familiar with using Git. After suffering through some painful &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@ Mar 05 2013 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://christinachang.github.com/blog/archives/">
+  <link rel="canonical" href="http://christinachang.github.com/blog/2013/04/02/getting-git/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -78,82 +75,140 @@ Mar 05 2013 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Getting Git</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-02T20:09:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>Since working on our group project a couple of weeks ago, I&#8217;ve gotten more familiar with using Git. After suffering through some painful merging of branches into master, I have learned some important lessons of what to do (e.g., make sure your local master is up to date before rebasing and merging branches!) and what <em>not</em> to do (e.g., panic and recklessly type arbitrary git commands in the middle of a rebase!)</p>
 
-  
-  <h2>2013</h2>
+<p>Here are 10 steps for Git success (for branching and merging):</p>
 
-<article>
-  
-<h1><a href="/blog/2013/04/02/getting-git/">Getting Git</a></h1>
-<time datetime="2013-04-02T20:09:00-04:00" pubdate><span class='month'>Apr</span> <span class='day'>02</span> <span class='year'>2013</span></time>
+<p>1) Before branching, make sure your local master is up to date with remote master.</p>
 
+<p>  <code>git pull origin master</code></p>
 
-</article>
+<p>2) Create and check out a new branch.</p>
 
+<p>  <code>git checkout -b [NAME_OF_FEATURE_BRANCH]</code></p>
 
+<p>3) Do all your work on this branch. Once your branch is complete, check out master and make sure that your local master is up to date with the latest changes on master.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/03/17/equal-operators/">Equal Operators: The Case of Mistaken Identity in JS</a></h1>
-<time datetime="2013-03-17T18:35:00-04:00" pubdate><span class='month'>Mar</span> <span class='day'>17</span> <span class='year'>2013</span></time>
+<p>  <code>git pull origin master</code></p>
 
+<p>4) Check out your feature branch.</p>
 
-</article>
+<p>  <code>git co [FEATURE_BRANCH]</code></p>
 
+<p>5) From your feature branch, rebase master onto the feature branch.</p>
 
+<p>  <code>git rebase master</code></p>
 
-<article>
-  
-<h1><a href="/blog/2013/03/05/who-you-callin-a-foo/">Who You Callin&#8217; a Foo?!</a></h1>
-<time datetime="2013-03-05T19:46:00-05:00" pubdate><span class='month'>Mar</span> <span class='day'>05</span> <span class='year'>2013</span></time>
+<p>6) Resolve all conflicts on the feature branch. After resolving conflicts in your files, add your changes and continue the rebase.</p>
 
+<p>  <code>git add . </code><br>
+  <code>git rebase --continue</code></p>
 
-</article>
+<p>7) Once the rebase is complete, check out master.</p>
 
+<p>  <code>git co master</code></p>
 
+<p>8) Merge feature branch into master.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/03/03/rvm-versions-of-ruby/">Setting a Default Version of Ruby</a></h1>
-<time datetime="2013-03-03T17:09:00-05:00" pubdate><span class='month'>Mar</span> <span class='day'>03</span> <span class='year'>2013</span></time>
+<p>  <code>git merge [FEATURE_BRANCH]</code></p>
 
+<p>9) Double check that all conflicts have been resolved and that your code is working properly.</p>
 
-</article>
+<p>10) If everything looks good, push the merge to remote master.</p>
 
+<p>  <code>git push origin/master</code></p>
 
-
-<article>
-  
-<h1><a href="/blog/2013/02/23/recipe-scraper/">How to Scrape and Email Recipes from Epicurious.com</a></h1>
-<time datetime="2013-02-23T17:16:00-05:00" pubdate><span class='month'>Feb</span> <span class='day'>23</span> <span class='year'>2013</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/02/05/hello-world/">Why I&#8217;m Learning to Code</a></h1>
-<time datetime="2013-02-05T18:17:00-05:00" pubdate><span class='month'>Feb</span> <span class='day'>05</span> <span class='year'>2013</span></time>
-
-
-</article>
-
+<p>Some parting thoughts:<br>
+- Keep remote master clean. Write any new code on branches.<br>
+- Don&#8217;t branch off a feature branch. You should generally branch off master.<br>
+- Don&#8217;t merge a branch into master until the feature is fully complete.<br>
+- Keep your changes small so that you don&#8217;t spend too much time working on the same branch.<br>
+- Write succinct but descriptive commit messages.<br>
+- Once your branch is complete and merged, any new work should be done on a new branch.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Christina Chang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-02T20:09:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/04/02/getting-git/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/04/02/getting-git/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/17/equal-operators/" title="Previous Post: Equal Operators: The Case of Mistaken Identity in JS">&laquo; Equal Operators: The Case of Mistaken Identity in JS</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -254,7 +309,10 @@ Mar 05 2013 &hellip;">
       var disqus_shortname = 'christinachang';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://christinachang.github.com/blog/2013/04/02/getting-git/';
+        var disqus_url = 'http://christinachang.github.com/blog/2013/04/02/getting-git/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

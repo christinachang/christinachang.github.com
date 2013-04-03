@@ -9,7 +9,7 @@
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="A little tidbit I learned about Javascript and the equal operator: &#8217;=&#8217; denotes assignment. Example: var x = 10; &#8217;==&#8217; compares &hellip;">
+  <meta name="description" content="Since working on our group project a couple of weeks ago, I&#8217;ve gotten more familiar with using Git. After suffering through some painful &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,7 +82,94 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/03/17/">Equal Operators: The Case of Mistaken Identity in JS</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/04/02/getting-git/">Getting Git</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-02T20:09:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
+        
+         | <a href="/blog/2013/04/02/getting-git/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Since working on our group project a couple of weeks ago, I&#8217;ve gotten more familiar with using Git. After suffering through some painful merging of branches into master, I have learned some important lessons of what to do (e.g., make sure your local master is up to date before rebasing and merging branches!) and what <em>not</em> to do (e.g., panic and recklessly type arbitrary git commands in the middle of a rebase!)</p>
+
+<p>Here are 10 steps for Git success (for branching and merging):</p>
+
+<p>1) Before branching, make sure your local master is up to date with remote master.</p>
+
+<p>  <code>git pull origin master</code></p>
+
+<p>2) Create and check out a new branch.</p>
+
+<p>  <code>git checkout -b [NAME_OF_FEATURE_BRANCH]</code></p>
+
+<p>3) Do all your work on this branch. Once your branch is complete, check out master and make sure that your local master is up to date with the latest changes on master.</p>
+
+<p>  <code>git pull origin master</code></p>
+
+<p>4) Check out your feature branch.</p>
+
+<p>  <code>git co [FEATURE_BRANCH]</code></p>
+
+<p>5) From your feature branch, rebase master onto the feature branch.</p>
+
+<p>  <code>git rebase master</code></p>
+
+<p>6) Resolve all conflicts on the feature branch. After resolving conflicts in your files, add your changes and continue the rebase.</p>
+
+<p>  <code>git add . </code><br>
+  <code>git rebase --continue</code></p>
+
+<p>7) Once the rebase is complete, check out master.</p>
+
+<p>  <code>git co master</code></p>
+
+<p>8) Merge feature branch into master.</p>
+
+<p>  <code>git merge [FEATURE_BRANCH]</code></p>
+
+<p>9) Double check that all conflicts have been resolved and that your code is working properly.</p>
+
+<p>10) If everything looks good, push the merge to remote master.</p>
+
+<p>  <code>git push origin/master</code></p>
+
+<p>Some parting thoughts:<br>
+- Keep remote master clean. Write any new code on branches.<br>
+- Don&#8217;t branch off a feature branch. You should generally branch off master.<br>
+- Don&#8217;t merge a branch into master until the feature is fully complete.<br>
+- Keep your changes small so that you don&#8217;t spend too much time working on the same branch.<br>
+- Write succinct but descriptive commit messages.<br>
+- Once your branch is complete and merged, any new work should be done on a new branch.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/17/equal-operators/">Equal Operators: The Case of Mistaken Identity in JS</a></h1>
     
     
       <p class="meta">
@@ -100,7 +187,7 @@
 
 <time datetime="2013-03-17T18:35:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/03/17/#disqus_thread">Comments</a>
+         | <a href="/blog/2013/03/17/equal-operators/#disqus_thread">Comments</a>
         
       </p>
     
@@ -392,7 +479,11 @@ end
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/03/17/">Equal Operators: The Case of Mistaken Identity in JS</a>
+        <a href="/blog/2013/04/02/getting-git/">Getting Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/17/equal-operators/">Equal Operators: The Case of Mistaken Identity in JS</a>
       </li>
     
       <li class="post">
@@ -405,10 +496,6 @@ end
     
       <li class="post">
         <a href="/blog/2013/02/23/recipe-scraper/">How to Scrape and Email Recipes from Epicurious.com</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/05/hello-world/">Why I&#8217;m Learning to Code</a>
       </li>
     
   </ul>
