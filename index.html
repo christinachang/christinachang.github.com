@@ -107,7 +107,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Since working on our group project a couple of weeks ago, I&#8217;ve gotten more familiar with using Git. After suffering through some painful merging of branches into master, I have learned some important lessons of what to do (e.g., make sure your local master is up to date before rebasing and merging branches!) and what <em>not</em> to do (e.g., panic and recklessly type arbitrary git commands in the middle of a rebase!)</p>
+  <div class="entry-content"><p>Since working on our group project a couple of weeks ago, I&#8217;ve gotten more familiar with using Git. After suffering through some painful merging of branches into master, I have learned some important lessons of what to do (e.g., make sure your local master is up to date before rebasing and merging branches!) and what <em>not</em> to do (e.g., panic and type arbitrary git commands during a rebase!)</p>
 
 <p>Here are 10 steps for Git success (for branching and merging):</p>
 
@@ -119,38 +119,40 @@
 
 <p>  <code>git checkout -b [NAME_OF_FEATURE_BRANCH]</code></p>
 
-<p>3) Do all your work on this branch. Once your branch is complete, check out master and make sure that your local master is up to date with the latest changes on master.</p>
+<p>3) Do all your work on this branch. Once your branch is complete, commit all of your changes and push them to the branch.</p>
+
+<p>  <code>git commit -am "helpful commit message!"</code></p>
+
+<p>4) Check out master and make sure that your local master is up to date with the latest changes on master.</p>
 
 <p>  <code>git pull origin master</code></p>
 
-<p>4) Check out your feature branch.</p>
+<p>5) Check out your feature branch.</p>
 
 <p>  <code>git co [FEATURE_BRANCH]</code></p>
 
-<p>5) From your feature branch, rebase master onto the feature branch.</p>
+<p>6) From your feature branch, rebase master onto the feature branch.</p>
 
 <p>  <code>git rebase master</code></p>
 
-<p>6) Resolve all conflicts on the feature branch. After resolving conflicts in your files, add your changes and continue the rebase.</p>
+<p>7) Resolve all conflicts on the feature branch. After resolving conflicts in your files, add your changes and continue the rebase.</p>
 
 <p>  <code>git add . </code><br>
   <code>git rebase --continue</code></p>
 
-<p>7) Once the rebase is complete, check out master.</p>
+<p>8) Once the rebase is complete, check out master.</p>
 
 <p>  <code>git co master</code></p>
 
-<p>8) Merge feature branch into master.</p>
+<p>9) Merge feature branch into master.</p>
 
 <p>  <code>git merge [FEATURE_BRANCH]</code></p>
 
-<p>9) Double check that all conflicts have been resolved and that your code is working properly.</p>
+<p>10) Double check that all conflicts have been resolved and that your code is working properly. If everything looks good, push the merge to remote master.</p>
 
-<p>10) If everything looks good, push the merge to remote master.</p>
+<p>  <code>git push origin master</code></p>
 
-<p>  <code>git push origin/master</code></p>
-
-<p>Some parting thoughts:<br>
+<p>Some additional thoughts on good practices:<br>
 - Keep remote master clean. Write any new code on branches.<br>
 - Don&#8217;t branch off a feature branch. You should generally branch off master.<br>
 - Don&#8217;t merge a branch into master until the feature is fully complete.<br>
