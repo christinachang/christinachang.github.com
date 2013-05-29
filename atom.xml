@@ -4,7 +4,7 @@
   <title><![CDATA[Head in the Cloud]]></title>
   <link href="http://christinachang.github.com/atom.xml" rel="self"/>
   <link href="http://christinachang.github.com/"/>
-  <updated>2013-05-28T21:12:24-04:00</updated>
+  <updated>2013-05-28T22:45:27-04:00</updated>
   <id>http://christinachang.github.com/</id>
   <author>
     <name><![CDATA[Christina Chang]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Drop, Create, Migrate]]></title>
+    <link href="http://christinachang.github.com/blog/2013/05/28/drop/"/>
+    <updated>2013-05-28T22:37:00-04:00</updated>
+    <id>http://christinachang.github.com/blog/2013/05/28/drop</id>
+    <content type="html"><![CDATA[<p>Sometimes you need to wipe your database and start over.</p>
+
+<p>In your rails console, type the following and hit enter:</p>
+
+<p><code>rake db:drop &amp;&amp; db:create &amp;&amp; db:migrate </code></p>
+
+<p>These commands will delete your existing database, create a new one, and run your migrations all in one line. Pretty handy.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Pass the Salt! Securing Passwords with Salting and Hashing]]></title>

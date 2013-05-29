@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Who You Callin' a Foo?! - Head in the Cloud</title>
+  <title>Drop, Create, Migrate - Head in the Cloud</title>
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="Searching for the Origins of &#8220;foobar&#8221; While reading programming books and online resources, I often come across the all-purpose &hellip;">
+  <meta name="description" content="Sometimes you need to wipe your database and start over. In your rails console, type the following and hit enter: rake db:drop &amp;&amp; db:create & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/">
+  <link rel="canonical" href="http://christinachang.github.com/blog/2013/05/28/drop/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Who You Callin' a Foo?!</h1>
+      <h1 class="entry-title">Drop, Create, Migrate</h1>
     
     
       <p class="meta">
@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2013-03-05T19:46:00-05:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
+<time datetime="2013-05-28T22:37:00-04:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,20 +104,13 @@
   </header>
 
 
-<div class="entry-content"><h3>Searching for the Origins of &#8220;foobar&#8221;</h3>
+<div class="entry-content"><p>Sometimes you need to wipe your database and start over.</p>
 
+<p>In your rails console, type the following and hit enter:</p>
 
-<p>While reading programming books and online resources, I often come across the all-purpose placeholder terms &#8220;foo&#8221;, &#8220;bar&#8221;, and &#8220;baz&#8221; in code examples. For the non-programmers out there, these terms are used to name entities such as variables, functions, and commands in order to demonstrate a concept.</p>
+<p><code>rake db:drop &amp;&amp; db:create &amp;&amp; db:migrate </code></p>
 
-<p>I was curious about the origins of these terms and did some investigative research (i.e. looked it up on <a href="http://en.wikipedia.org/wiki/Foobar" target="_blank">Wikipedia</a>). What I found was pretty interesting.</p>
-
-<p><em>Foo</em> first originated as a nonsense word in the 1930s when it appeared in a comic called Smokey Stover by Bill Holman who stated that he used the word after seeing it on the bottom of a jade figurine in Chinatown, San Francisco. The Chinese word transliterated as &#8220;fu&#8221; means good luck.</p>
-
-<p>The term then evolved into military slang in the 1940s, merging with the term FUBAR, which stands for &#8220;F**ked Up Beyond All Repair.&#8221; During WWII, the term &#8216;foo fighters&#8217; was used to describe UFOs (so <em>that&#8217;s</em> where the Foo Fighters got its name!).</p>
-
-<p>The use of <em>foo</em> in a programming context may have begun in the 1960s by the Tech Model Railroad Club (TMRC), a student organization that built model trains and systems. The term <em>foobar</em> first appeared in system manuals by Digital Equipment Corporation in the 1960s and early 1970s.</p>
-
-<p>The exact relationships between foo, FUBAR, and foo/bar in a programming context are not known with certainty but anecdotal theories abound. You can learn more about the etymology of <em>foo</em> in the Internet Engineering Task Force (IETF) <a href="http://www.faqs.org/rfcs/rfc3092.html" target="_blank">RFC 3092</a>. It&#8217;s pretty interesting reading.</p>
+<p>These commands will delete your existing database, create a new one, and run your migrations all in one line. Pretty handy.</p>
 </div>
 
 
@@ -140,7 +133,7 @@
   
 
 
-<time datetime="2013-03-05T19:46:00-05:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
+<time datetime="2013-05-28T22:37:00-04:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
       
 
 
@@ -148,7 +141,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/05/28/drop/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/05/28/drop/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -161,10 +154,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/03/03/rvm-versions-of-ruby/" title="Previous Post: Setting a Default Version of Ruby">&laquo; Setting a Default Version of Ruby</a>
+        <a class="basic-alignment left" href="/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/" title="Previous Post: Pass the Salt! Securing Passwords with Salting and Hashing">&laquo; Pass the Salt! Securing Passwords with Salting and Hashing</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/03/17/equal-operators/" title="Next Post: Equal Operators: The Case of Mistaken Identity in JS">Equal Operators: The Case of Mistaken Identity in JS &raquo;</a>
       
     </p>
   </footer>
@@ -276,8 +267,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/';
-        var disqus_url = 'http://christinachang.github.com/blog/2013/03/05/who-you-callin-a-foo/';
+        var disqus_identifier = 'http://christinachang.github.com/blog/2013/05/28/drop/';
+        var disqus_url = 'http://christinachang.github.com/blog/2013/05/28/drop/';
         var disqus_script = 'embed.js';
       
     (function () {

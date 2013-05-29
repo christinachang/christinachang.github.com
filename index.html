@@ -9,7 +9,7 @@
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="If your application requires users to log in with their passwords and you are storing these passwords in a database, it&#8217;s important that you &hellip;">
+  <meta name="description" content="Sometimes you need to wipe your database and start over. In your rails console, type the following and hit enter: rake db:drop &amp;&amp; db:create & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,50 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/28/drop/">Drop, Create, Migrate</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-28T22:37:00-04:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/28/drop/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sometimes you need to wipe your database and start over.</p>
+
+<p>In your rails console, type the following and hit enter:</p>
+
+<p><code>rake db:drop &amp;&amp; db:create &amp;&amp; db:migrate </code></p>
+
+<p>These commands will delete your existing database, create a new one, and run your migrations all in one line. Pretty handy.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -548,6 +592,10 @@ end
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/28/drop/">Drop, Create, Migrate</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/">Pass the Salt! Securing Passwords with Salting and Hashing</a>
       </li>
     
@@ -561,10 +609,6 @@ end
     
       <li class="post">
         <a href="/blog/2013/03/05/who-you-callin-a-foo/">Who You Callin&#8217; a Foo?!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/03/03/rvm-versions-of-ruby/">Setting a Default Version of Ruby</a>
       </li>
     
   </ul>
