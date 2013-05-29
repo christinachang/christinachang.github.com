@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Drop, Create, Migrate"
+date: 2013-05-28 22:37
+comments: true
+categories: 
+---
+
+Sometimes you need to wipe your database and start over.
+
+In your rails console, type the following and hit enter: 
+
+<code>rake db:drop && db:create && db:migrate </code>
+
+These commands will delete your existing database, create a new one, and run your migrations all in one line. Pretty handy.
