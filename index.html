@@ -9,7 +9,7 @@
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="Since working on our group project a couple of weeks ago, I&#8217;ve gotten more familiar with using Git. After suffering through some painful &hellip;">
+  <meta name="description" content="If your application requires users to log in with their passwords and you are storing these passwords in a database, it&#8217;s important that you &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,73 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/">Pass the Salt! Securing Passwords With Salting and Hashing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-28T20:07:00-04:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If your application requires users to log in with their passwords and you are storing these passwords in a database, it&#8217;s important that you protect your users&#8217; passwords in case of any security breaches.</p>
+
+<p>First rule: passwords should never be stored in the database unencrypted (in plain text).</p>
+
+<p>The best method to protect passwords is to employ salted password hashing.</p>
+
+<p>Hashing is an algorithmic function that turns data into a fixed-length fingerprint that cannot be reversed. The advantage of hashing is that if the input changes by even one character, the resulting hash is completely different.</p>
+
+<p><b>Example:</b><br>
+<img src="/images/hash.png"></img></p>
+
+<p>After a password has been hashed, the hash is stored in the database. When the user logs in, the hash of the password they entered is verified against the hash of the password in the database. If the hashes match then the user is granted access.</p>
+
+<p>Hashing a password, however, still does not provide adequate protection. It&#8217;s possible to crack hashes by guessing at passwords, hashing those guesses, and then checking if the guess hashes are equal to the hashed password. These guess methods are commonly called dictionary attacks and brute-force attacks.</p>
+
+<p>A dictionary attack uses a list of words, phrases, and common passwords that are hashed and then compared to the password hash. A brute force attack tries every possible combination of characters up to a certain length.</p>
+
+<p>These attack methods work because every password is hashed the exact same way. Users with the same password would have the same password hashes. To prevent these attacks from successfully gaining access to user passwords, the hashes should be randomized by either appending or prepending a random string called a salt to the password before it is hashed.</p>
+
+<p><b>Example:</b>
+<img src="/images/salted_hash.png"></img></p>
+
+<p>Salting turns the same password into a completely different hash each time. In order to verify that the password a user enters is correct, the salt needs to be stored in the database along with the hash. It&#8217;s important that the same salt is NOT used for each hash. A salt should be random and not too short in length. When a user creates an account or changes their password, a new random should be generated.</p>
+
+<ul>Resources:
+<li><a href="http://en.wikipedia.org/wiki/Salt_(cryptography)">http://en.wikipedia.org/wiki/Salt_(cryptography)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">https://en.wikipedia.org/wiki/Cryptographic_hash_function</a></li>
+<li><a href="http://crackstation.net/hashing-security.htm">http://crackstation.net/hashing-security.htm</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -481,6 +548,10 @@ end
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/">Pass the Salt! Securing Passwords with Salting and Hashing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/02/getting-git/">Getting Git</a>
       </li>
     
@@ -494,10 +565,6 @@ end
     
       <li class="post">
         <a href="/blog/2013/03/03/rvm-versions-of-ruby/">Setting a Default Version of Ruby</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/23/recipe-scraper/">How to Scrape and Email Recipes from Epicurious.com</a>
       </li>
     
   </ul>

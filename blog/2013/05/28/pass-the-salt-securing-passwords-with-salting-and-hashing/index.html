@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Equal Operators: The Case of Mistaken Identity in JS - Head in the Cloud</title>
+  <title>Pass the Salt! Securing Passwords with Salting and Hashing - Head in the Cloud</title>
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="A little tidbit I learned about Javascript and the equal operator: &#8217;=&#8217; denotes assignment. Example: var x = 10; &#8217;==&#8217; compares &hellip;">
+  <meta name="description" content="If your application requires users to log in with their passwords and you are storing these passwords in a database, it&#8217;s important that you &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://christinachang.github.com/blog/2013/03/17/equal-operators/">
+  <link rel="canonical" href="http://christinachang.github.com/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Equal Operators: The Case of Mistaken Identity in JS</h1>
+      <h1 class="entry-title">Pass the Salt! Securing Passwords With Salting and Hashing</h1>
     
     
       <p class="meta">
@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2013-03-17T18:35:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-05-28T20:07:00-04:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,21 +104,36 @@
   </header>
 
 
-<div class="entry-content"><p>A little tidbit I learned about Javascript and the equal operator:</p>
+<div class="entry-content"><p>If your application requires users to log in with their passwords and you are storing these passwords in a database, it&#8217;s important that you protect your users&#8217; passwords in case of any security breaches.</p>
 
-<p>&#8217;=&#8217; denotes assignment.</p>
+<p>First rule: passwords should never be stored in the database unencrypted (in plain text).</p>
 
-<p>Example: var x = 10;</p>
+<p>The best method to protect passwords is to employ salted password hashing.</p>
 
-<p>&#8217;==&#8217; compares two values and returns a boolean (true or false).</p>
+<p>Hashing is an algorithmic function that turns data into a fixed-length fingerprint that cannot be reversed. The advantage of hashing is that if the input changes by even one character, the resulting hash is completely different.</p>
 
-<p>Example: 10 == &#8216;10&#8217; // returns true</p>
+<p><b>Example:</b><br>
+<img src="/images/hash.png"></img></p>
 
-<p>&#8217;===&#8217; compares both the values AND the type of the data.</p>
+<p>After a password has been hashed, the hash is stored in the database. When the user logs in, the hash of the password they entered is verified against the hash of the password in the database. If the hashes match then the user is granted access.</p>
 
-<p>Example: 10 === &#8216;10&#8217; // returns false</p>
+<p>Hashing a password, however, still does not provide adequate protection. It&#8217;s possible to crack hashes by guessing at passwords, hashing those guesses, and then checking if the guess hashes are equal to the hashed password. These guess methods are commonly called dictionary attacks and brute-force attacks.</p>
 
-<p>It&#8217;s important to know which operator to use to get the results you expect!</p>
+<p>A dictionary attack uses a list of words, phrases, and common passwords that are hashed and then compared to the password hash. A brute force attack tries every possible combination of characters up to a certain length.</p>
+
+<p>These attack methods work because every password is hashed the exact same way. Users with the same password would have the same password hashes. To prevent these attacks from successfully gaining access to user passwords, the hashes should be randomized by either appending or prepending a random string called a salt to the password before it is hashed.</p>
+
+<p><b>Example:</b>
+<img src="/images/salted_hash.png"></img></p>
+
+<p>Salting turns the same password into a completely different hash each time. In order to verify that the password a user enters is correct, the salt needs to be stored in the database along with the hash. It&#8217;s important that the same salt is NOT used for each hash. A salt should be random and not too short in length. When a user creates an account or changes their password, a new random should be generated.</p>
+
+<ul>Resources:
+<li><a href="http://en.wikipedia.org/wiki/Salt_(cryptography)">http://en.wikipedia.org/wiki/Salt_(cryptography)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">https://en.wikipedia.org/wiki/Cryptographic_hash_function</a></li>
+<li><a href="http://crackstation.net/hashing-security.htm">http://crackstation.net/hashing-security.htm</a></li>
+</ul>
+
 </div>
 
 
@@ -141,7 +156,7 @@
   
 
 
-<time datetime="2013-03-17T18:35:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-05-28T20:07:00-04:00" pubdate data-updated="true">May 28<span>th</span>, 2013</time>
       
 
 
@@ -149,7 +164,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/03/17/equal-operators/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/03/17/equal-operators/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -162,10 +177,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/03/05/who-you-callin-a-foo/" title="Previous Post: Who You Callin' a Foo?!">&laquo; Who You Callin' a Foo?!</a>
+        <a class="basic-alignment left" href="/blog/2013/04/02/getting-git/" title="Previous Post: Getting Git">&laquo; Getting Git</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/04/02/getting-git/" title="Next Post: Getting Git">Getting Git &raquo;</a>
       
     </p>
   </footer>
@@ -277,8 +290,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://christinachang.github.com/blog/2013/03/17/equal-operators/';
-        var disqus_url = 'http://christinachang.github.com/blog/2013/03/17/equal-operators/';
+        var disqus_identifier = 'http://christinachang.github.com/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/';
+        var disqus_url = 'http://christinachang.github.com/blog/2013/05/28/pass-the-salt-securing-passwords-with-salting-and-hashing/';
         var disqus_script = 'embed.js';
       
     (function () {
