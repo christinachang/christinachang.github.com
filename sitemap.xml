@@ -35,12 +35,18 @@
         <lastmod>2013-05-28T22:45:26-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://christinachang.github.com/blog/2013/05/29/strong-parameters-and-mass-assignment-in-rails-4/
+        </loc>
+        <lastmod>2013-05-30T20:47:53-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://christinachang.github.com/blog/archives/</loc>
-        <lastmod>2013-05-28T22:45:26-04:00</lastmod>
+        <lastmod>2013-05-30T20:47:53-04:00</lastmod>
     </url>
     <url>
         <loc>http://christinachang.github.com/</loc>
-        <lastmod>2013-05-28T22:45:26-04:00</lastmod>
+        <lastmod>2013-05-30T20:47:53-04:00</lastmod>
     </url>
     <url>
         <loc>http://christinachang.github.com/robots.txt</loc>

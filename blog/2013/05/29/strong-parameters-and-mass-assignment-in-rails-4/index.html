@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Equal Operators: The Case of Mistaken Identity in JS - Head in the Cloud</title>
+  <title>Strong Parameters and Mass Assignment in Rails 4 - Head in the Cloud</title>
   <meta name="author" content="Christina Chang">
 
   
-  <meta name="description" content="A little tidbit I learned about Javascript and the equal operator: &#8217;=&#8217; denotes assignment. Example: var x = 10; &#8217;==&#8217; compares &hellip;">
+  <meta name="description" content="One of the new features in Rails 4.0 is &#8220;Strong Parameters&#8221; (a gem) which moves mass assignment out of the model and into the controller &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://christinachang.github.com/blog/2013/03/17/equal-operators/">
+  <link rel="canonical" href="http://christinachang.github.com/blog/2013/05/29/strong-parameters-and-mass-assignment-in-rails-4/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Equal Operators: The Case of Mistaken Identity in JS</h1>
+      <h1 class="entry-title">Strong Parameters and Mass Assignment in Rails 4</h1>
     
     
       <p class="meta">
@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2013-03-17T18:35:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-05-29T18:13:00-04:00" pubdate data-updated="true">May 29<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,21 +104,94 @@
   </header>
 
 
-<div class="entry-content"><p>A little tidbit I learned about Javascript and the equal operator:</p>
+<div class="entry-content"><p>One of the new features in Rails 4.0 is &#8220;Strong Parameters&#8221; (a gem) which moves mass assignment out of the model and into the controller.</p>
 
-<p>&#8217;=&#8217; denotes assignment.</p>
+<p>Mass assignment allows multiple attributes of a class to be assigned simultanteously upon instantiation.</p>
 
-<p>Example: var x = 10;</p>
+<p>Sometimes you don&#8217;t want all attributes to be mass assign-able. To provide mass assignment protection, you can specify which attributes can be mass assigned using &#8220;attr_accessible&#8221; in the model.</p>
 
-<p>&#8217;==&#8217; compares two values and returns a boolean (true or false).</p>
+<p>Example:</p>
 
-<p>Example: 10 == &#8216;10&#8217; // returns true</p>
+<pre>
+class User < ActiveRecord::Base
+    attr_accessible :name, :email
+end
+</pre>
 
-<p>&#8217;===&#8217; compares both the values AND the type of the data.</p>
 
-<p>Example: 10 === &#8216;10&#8217; // returns false</p>
+<p>If you want to mass assign different attributes for different roles, you would specify what is attr_accessible for each role.</p>
 
-<p>It&#8217;s important to know which operator to use to get the results you expect!</p>
+<p>Example:</p>
+
+<pre>
+class User < ActiveRecord::Base
+    attr_accessible :name, :email               # default role
+    attr_accessible :eat_cake, :as => :admin    # admin role
+end
+</pre>
+
+
+<p>There has been a lot of discussion within the community about whether mass assignment security belongs in the model layer. If an application has complex authorization requirements, adding separate code for each &#8220;role&#8221; can become cumbersome. Since the controller handles the flow between user and application including the authentication and authorization, it seems reasonable to move mass assignment protection into the controller.</p>
+
+<p>DHH built the Strong Parameters gem to address this issue and as I mentioned at the beginning of the post, this feature is integrated in Rails 4.0 by default. Below is an example of how it could be implemented.</p>
+
+<p>Example:</p>
+
+<pre>
+class UsersController < ApplicationController
+  
+  def update
+    user = User.find(params[:id])
+    if user.update_attributes(user_params)
+      redirect_to home_path
+    else
+      render :edit
+    end
+  end
+ 
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
+
+end
+</pre>
+
+
+<p>The &#8216;require&#8217; method ensures that the specified key is available in the params hash and the &#8216;permit&#8217; method specifies which attributes can be mass assigned.</p>
+
+<p>To implement the mass assignment protection in the controller in Rails 3.2.x, you would need to install and require the Strong Parameters gem and then add the following code in addition to the code above:</p>
+
+<p>In the config/application.rb file:</p>
+
+<pre>
+    config.active_record.whitelist_attributes = false
+</pre>
+
+
+<p>
+or just remove the code completely.</p>
+
+<p>In the model:</p>
+
+<pre>
+    class User < ActiveRecord::Base
+      include ActiveModel::ForbiddenAttributesProtection
+    end
+</pre>
+
+
+
+
+<ul>Additional resources:
+    <li><a href="http://railscasts.com/episodes/371-strong-parameters">http://railscasts.com/episodes/371-strong-parameters</a></li>
+    <li><a href="http://rubysource.com/rails-4-quick-look-strong-parameters/">http://rubysource.com/rails-4-quick-look-strong-parameters/</a></li>
+    <li><a href="http://modernlegend.github.io/blog/2013/03/16/what-is-mass-assignment/">Yanik&#8217;s blog post on mass assignment</a></li>
+</ul>
+
+
+
 </div>
 
 
@@ -141,7 +214,7 @@
   
 
 
-<time datetime="2013-03-17T18:35:00-04:00" pubdate data-updated="true">Mar 17<span>th</span>, 2013</time>
+<time datetime="2013-05-29T18:13:00-04:00" pubdate data-updated="true">May 29<span>th</span>, 2013</time>
       
 
 
@@ -149,7 +222,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/03/17/equal-operators/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/03/17/equal-operators/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://christinachang.github.com/blog/2013/05/29/strong-parameters-and-mass-assignment-in-rails-4/" data-via="cchang81" data-counturl="http://christinachang.github.com/blog/2013/05/29/strong-parameters-and-mass-assignment-in-rails-4/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -162,10 +235,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/03/05/who-you-callin-a-foo/" title="Previous Post: Who You Callin' a Foo?!">&laquo; Who You Callin' a Foo?!</a>
+        <a class="basic-alignment left" href="/blog/2013/05/28/drop/" title="Previous Post: Drop, Create, Migrate">&laquo; Drop, Create, Migrate</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/04/02/getting-git/" title="Next Post: Getting Git">Getting Git &raquo;</a>
       
     </p>
   </footer>
@@ -277,8 +348,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://christinachang.github.com/blog/2013/03/17/equal-operators/';
-        var disqus_url = 'http://christinachang.github.com/blog/2013/03/17/equal-operators/';
+        var disqus_identifier = 'http://christinachang.github.com/blog/2013/05/29/strong-parameters-and-mass-assignment-in-rails-4/';
+        var disqus_url = 'http://christinachang.github.com/blog/2013/05/29/strong-parameters-and-mass-assignment-in-rails-4/';
         var disqus_script = 'embed.js';
       
     (function () {
